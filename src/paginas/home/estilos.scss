@@ -1,0 +1,20 @@
+.home{
+    background-color: rgb(238, 238, 238);
+    .conteiner{
+        padding: 3rem 13rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 3rem;
+    }
+    @media screen and (max-width: 1236px) {
+        .conteiner{
+            padding: 3rem 10rem;
+        }
+    }
+    @media screen and (max-width: 1120px) {
+        .conteiner{
+            justify-content: center;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+.rodape{
+    position: fixed;
+    background-color: rgb(214, 213, 213);
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    .creditos{
+        font-weight: 400;
+    }
+}

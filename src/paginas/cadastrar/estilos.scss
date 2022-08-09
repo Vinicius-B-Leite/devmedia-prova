@@ -1,0 +1,43 @@
+.cadastrar{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(238, 238, 238);
+    .continer-form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80%;
+        .form{
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 30rem;
+            padding: 2rem 7rem 2rem 2rem;
+            .form-titulo{
+                font-weight: 400;
+                font-size: 1.7rem;
+            }
+            .input{
+                width: 35rem;
+                height: 2.5rem;
+                border-radius: .3rem;
+                border: .15rem solid rgb(214, 213, 213);
+                padding-left: .5rem;
+                &:nth-child(4){
+                    height: 10rem;
+                    padding-top: .5rem;
+                }
+            }
+            .form-botao{
+                padding: .7rem;
+                width: 10rem;
+                border: 0;
+                background-color: rgb(214, 213, 213);
+                align-self: flex-end;
+                cursor: pointer;
+            }
+        }
+    }
+}
