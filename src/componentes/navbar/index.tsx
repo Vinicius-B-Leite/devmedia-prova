@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import './estilos.scss';
-import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
+import CampoDeBusca from "./campoBusca";
+import { IPublicacoes } from "../../tipos/IPublicacoes";
 
-export default function Navbar(){
+
+interface Props{
+    setPublicacoesFiltradas: React.Dispatch<React.SetStateAction<IPublicacoes[]>>
+    publicacoes: IPublicacoes[]
+}
+
+export default function Navbar({setPublicacoesFiltradas, publicacoes}: Props){
     const [visivel, setVisivel] = useState(false)
     return(
         <header className="cabecalho">
@@ -13,10 +20,7 @@ export default function Navbar(){
                     <li className="link"><Link className={"componente-link"} to={"/cadastrar"}>Cadastrar notícias</Link></li>
                     <li className="link"><Link className={"componente-link"} to={"/"}>Exibir notícias</Link></li>
                 </ul>
-                <div className="conteiner-pesquisa">
-                    <input className="pesquisa" type="text" />
-                    <FaSearch className="icon-pesquisar" />
-                </div>
+                <CampoDeBusca publicacoes={publicacoes} setPublicacoesFiltradas={setPublicacoesFiltradas}/>
                 <button className={`menu-responsivo ${visivel ? '' : 'ativado'}`}
                      onClick={() => setVisivel(!visivel)}>
                     <div className="linha1"></div>

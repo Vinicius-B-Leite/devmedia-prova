@@ -2,38 +2,35 @@ import React, { useState } from "react";
 import Navbar from "../../componentes/navbar";
 import Rodape from "../../componentes/rodape";
 import './estilos.scss'
-import {IPublicacoes} from '../tipos/IPublicacoes'
+import {IPublicacoes} from '../../tipos/IPublicacoes'
 
 
 interface Props{
     setPublicacoes: React.Dispatch<React.SetStateAction<IPublicacoes[]>>
+    publicacoes: IPublicacoes[]
 }
-export default function Cadastrar({setPublicacoes}: Props){
-    const [tituloNoticia, setTituloNoticia] = useState<string>()
-    const [categoriaNoticia, setCategoriaNoticia] = useState<string>()
-    const [conteudoNoticia, setConteudoNoticia] = useState<string>()
+
+export default function Cadastrar({setPublicacoes, publicacoes}: Props){
+    
+    const [tituloNoticia, setTituloNoticia] = useState<string>('')
+    const [categoriaNoticia, setCategoriaNoticia] = useState<string>('')
+    const [conteudoNoticia, setConteudoNoticia] = useState<string>('')
 
     const adicionarPublicacao = (evento: React.FormEvent) => {
         evento.preventDefault()
-        setPublicacoes((PublicacaoAntigas) => [
-                ...PublicacaoAntigas, 
-                {
-                    titulo:"hhhh", 
-                    categoria: "hhhh",
-                    descricao: "hhhh"
-                }])
-        console.log("foi")
+        setPublicacoes(publicacoesAntigas => [...publicacoesAntigas, {titulo: tituloNoticia, categoria: categoriaNoticia, descricao: conteudoNoticia}])
+        setTituloNoticia('')
+        setCategoriaNoticia('')
+        setConteudoNoticia('')
     }
     return(
         <div className="cadastrar">
-            <Navbar/>
             <div className="continer-form">
-                <form action="" className="form" onSubmit={ev => adicionarPublicacao(ev)}>
-                    
+                <form className="form" onSubmit={ev => adicionarPublicacao(ev)}>
                     <h1 className="form-titulo">Cadastro de notícias</h1>
                     <input 
                         value={tituloNoticia} 
-                        onChange={(e) => setTituloNoticia(e.target.value)} 
+                        onChange={e => setTituloNoticia(e.target.value)} 
                         className="input" 
                         type="text" 
                         placeholder="Título da notícia" 
@@ -56,7 +53,6 @@ export default function Cadastrar({setPublicacoes}: Props){
                     <button className="form-botao">Cadastrar</button>
                 </form>
             </div>
-            <Rodape/>
         </div>
     )
 }

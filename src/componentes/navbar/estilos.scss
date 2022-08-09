@@ -49,24 +49,7 @@
                 }
             }
         }
-        .conteiner-pesquisa{
-            position: relative;
-            .pesquisa{
-                border-radius: 10rem;
-                height: 2rem;
-                width: 18rem;
-                padding: .8rem;
-                font-size: 1rem;
-                border: 0;
-            }
-            .icon-pesquisar{
-                position: absolute;
-                display: block;
-                top: 50%;
-                transform: translateY(-50%);
-                right: .5rem;
-            }
-        }
+        
     }
     @media screen and (max-width: 1025px) {
         .navbar{
