@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.scss';
 import Home from './paginas/home';
 import Cadastrar from './paginas/cadastrar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
@@ -14,13 +13,11 @@ function App() {
   const [publicacoesFiltradas, setPublicacoesFiltradas] = useState<IPublicacoes[]>([])
   return (
     <Router>
-      <Navbar publicacoes={publicacoes} setPublicacoesFiltradas={setPublicacoesFiltradas}/>
       <Routes>
-        <Route path='/'  element={<Home publicacoes={publicacoes}/>}/>
-        <Route path='/cadastrar' element={<Cadastrar publicacoes={publicacoes} setPublicacoes={setPublicacoes}/>}/>
+        <Route path='/'  element={<Home setPublicacoesFiltradas={setPublicacoesFiltradas} publicacoes={publicacoes}/>}/>
+        <Route path='/cadastrar' element={<Cadastrar publicacoes={publicacoes} setPublicacoesFiltradas={setPublicacoesFiltradas} setPublicacoes={setPublicacoes}/>}/>
         <Route path='/pesquisa' element={<BuscaFiltrada publicacoesFiltradas={publicacoesFiltradas}/>} />
       </Routes>
-      <Rodape/>
     </Router>
   );
 }

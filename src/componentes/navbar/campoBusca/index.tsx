@@ -2,21 +2,17 @@ import React, { useEffect, useState } from "react";
 import { FaSearch } from 'react-icons/fa';
 import './estilos.scss'
 import { Link } from "react-router-dom";
-import { IPublicacoes } from "../../../tipos/IPublicacoes";
+import { IPublicacoesFiltradas } from "../../../tipos/IPublicacoesFiltradas";
 
-interface Props{
-    setPublicacoesFiltradas: React.Dispatch<React.SetStateAction<IPublicacoes[]>>
-    publicacoes: IPublicacoes[]
 
-}
-export default function CampoDeBusca({setPublicacoesFiltradas, publicacoes}: Props){
+export default function CampoDeBusca({setPublicacoesFiltradas, publicacoes}: IPublicacoesFiltradas){
 
     const [texto, setTexto] = useState<string>('')
 
     useEffect(()=>{
-        const filtradas = publicacoes.filter(p=> p.titulo.includes(texto) || p.categoria.includes(texto) || p.descricao.includes(texto))
+        let filtradas = publicacoes.filter(p=> p.titulo.includes(texto) || p.categoria.includes(texto) || p.descricao.includes(texto))
         setPublicacoesFiltradas(filtradas)
-    }, [texto])
+    }, [texto, setPublicacoesFiltradas, publicacoes])
 
     return(
         <Link to={'/pesquisa'} className="conteiner-pesquisa">
