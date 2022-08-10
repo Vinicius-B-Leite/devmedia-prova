@@ -3,8 +3,6 @@ import Home from './paginas/home';
 import Cadastrar from './paginas/cadastrar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import {IPublicacoes}  from './tipos/IPublicacoes'
-import Navbar from './componentes/navbar';
-import Rodape from './componentes/rodape';
 import BuscaFiltrada from './paginas/buscaFiltrada';
 
 

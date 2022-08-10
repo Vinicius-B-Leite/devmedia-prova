@@ -1,12 +1,14 @@
-.cadastrar{
+.cadastrar {
     background-color: rgb(238, 238, 238);
-    min-height: 100vh;
-    .conteiner-form{
+    height: 100vh;
+
+    .conteiner-form {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 80%;
-        .form{
+
+        .form {
             background-color: #ffffff;
             display: flex;
             flex-direction: column;
@@ -14,22 +16,26 @@
             box-sizing: border-box;
             height: 30rem;
             padding: 2rem 7rem 2rem 2rem;
-            .form-titulo{
+
+            .form-titulo {
                 font-weight: 400;
                 font-size: 1.7rem;
             }
-            .input{
+
+            .input {
                 width: 35rem;
                 height: 2.5rem;
                 border-radius: .3rem;
                 border: .15rem solid rgb(214, 213, 213);
                 padding-left: .5rem;
-                &:nth-child(4){
+
+                &:nth-child(4) {
                     height: 10rem;
                     padding-top: .5rem;
                 }
             }
-            .form-botao{
+
+            .form-botao {
                 padding: .7rem;
                 width: 10rem;
                 border: 0;
@@ -43,14 +49,37 @@
 }
 
 @media screen and (max-width: 759px) {
+    .cadastrar {
+        .conteiner-form {
+            .form {
+                padding: 2rem 2rem 2rem 2rem;
 
-    .cadastrar{
-        .form{
-            padding: 2rem 2rem 2rem 2rem;
-            .input{
-                width: 20rem;
+                .input {
+                    width: 20rem;
+                }
             }
         }
     }
-    
+}
+@media screen and (max-width: 400px) {
+    .cadastrar {
+        .conteiner-form {
+            .form {
+                padding: 1rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .cadastrar {
+        .conteiner-form {
+            .form {
+                padding: 1rem;
+                .input{
+                    width: 16rem;
+                }
+            }
+        }
+    }
 }
