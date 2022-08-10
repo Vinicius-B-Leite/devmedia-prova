@@ -1,21 +1,21 @@
-import React, { useState } from "react";
+import Navbar from "../../componentes/navbar";
 import Publicacao from "../../componentes/publicacao";
-import { IPublicacoes } from "../../tipos/IPublicacoes";
+import Rodape from "../../componentes/rodape";
+import { IPublicacoesFiltradas } from "../../tipos/IPublicacoesFiltradas";
 import './estilos.scss';
 
 
-interface Props{
-    publicacoesFiltradas: IPublicacoes[]
-}
 
-export default function BuscaFiltrada({publicacoesFiltradas=[]}: Props){
-    return(
+export default function BuscaFiltrada({ setPublicacoesFiltradas, publicacoes, publicacoesFiltradas = [] }: IPublicacoesFiltradas) {
+    return (
         <div className="filtro">
+            <Navbar publicacoes={publicacoes} setPublicacoesFiltradas={setPublicacoesFiltradas} />
             <div className="conteiner">
                 {
-                    publicacoesFiltradas.map(publi=> <Publicacao titulo={publi.titulo} descricao={publi.descricao} key={publi.titulo}/>)
+                    publicacoesFiltradas.map(publi => <Publicacao titulo={publi.titulo} descricao={publi.descricao} key={publi.titulo} />)
                 }
             </div>
+            <Rodape />
         </div>
     )
 }

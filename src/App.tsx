@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path='/'  element={<Home setPublicacoesFiltradas={setPublicacoesFiltradas} publicacoes={publicacoes}/>}/>
         <Route path='/cadastrar' element={<Cadastrar publicacoes={publicacoes} setPublicacoesFiltradas={setPublicacoesFiltradas} setPublicacoes={setPublicacoes}/>}/>
-        <Route path='/pesquisa' element={<BuscaFiltrada publicacoesFiltradas={publicacoesFiltradas}/>} />
+        <Route path='/pesquisa' element={<BuscaFiltrada setPublicacoesFiltradas={setPublicacoesFiltradas} publicacoes={publicacoes} publicacoesFiltradas={publicacoesFiltradas}/>} />
       </Routes>
     </Router>
   );
